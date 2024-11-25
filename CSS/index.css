@@ -146,9 +146,52 @@ body {
     margin-top: 70px;
 }
 
-#bottom-logo-roll {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.bottom-logo-roll {
     float: left;
-    margin-top: 100px;
+    margin-top: 110px;
+    border-radius: 4px;
+}
+
+.scrolling-img-inner {
+    display: flex;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.scrolling-img {
+    display: flex;
+}
+
+.scrolling-img-item {
+    padding: 0 35px;
+}
+
+
+.scrolling-img-inner > div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 @font-face {
