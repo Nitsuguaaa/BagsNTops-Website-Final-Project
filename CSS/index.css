@@ -1,4 +1,172 @@
 body {
     background-color: #E27C97;
+    margin: 0px;
 }
 
+#top-bar {
+    margin: 0;
+    padding: 0;
+}
+
+#top-bar-1 {
+    width: 25%;
+    float: left;
+    text-align: left;
+}
+
+#tb-1-title {
+    padding: 30px 16px;
+    margin-left: 100px;
+    font-size: 25px;
+    font-family: 'Recoleta';
+    color: white;
+}
+
+#top-bar-2 {
+    width: 45%;
+    float: left;
+    margin: 0px;
+}
+
+#top-bar-3 {
+    width: 30%;
+    float: left;
+    margin: 0px;
+    text-align: right;
+}
+
+#nav-bar {
+    list-style-type: none;
+    overflow: hidden;
+    margin-left: 150px;
+}
+
+#nav-bar-2 {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+#nav-bar li {
+    float: left;
+    font-size: 25px;
+    font-family: 'NimbusSan';
+    margin-right: 100px;
+}
+
+#nav-bar-2 li {
+    float: right;
+    font-size: 25px;
+}
+  
+#nav-bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border-radius: 3px;
+}
+
+#nav-bar-2 li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border-radius: 3px;
+}
+  
+#nav-bar li a:hover {
+    background-color: #FFFFF0;
+    color: #E27C97;
+    border-radius: 20px;
+}
+
+#nav-bar-2 li a:hover {
+    background-color: #f0668b;
+    border-radius: 20px;
+}
+
+#main-content {
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+}
+
+#mc-side-pic {
+    float: left;
+    margin-left: 210px;
+    width: 30%;
+
+}
+
+#mc-side-content {
+    float: left;
+    width: 50%;
+}
+
+#mc-sc-title {
+    font-size: 90px;
+    font-family: Recoleta;
+    color: white;
+}
+
+#mc-sc-subtext {
+    font-size: 20px;
+    font-family: NimbusSanIta;
+    color: white;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+#mc-sc-start {
+    margin-top: 50px;
+    border: none;
+    background-color: #FFBACB;
+    font-size: 20px;
+    font-family: NimbusSanBol;
+    color: white;
+    padding: 14px 16px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+#mc-sc-start:hover {
+    background-color: #FFFFF0;
+    color: #E27C97;
+    cursor: pointer;
+}
+
+#mc-sc-followtext {
+    font-size: 18px;
+    font-family: NimbusSan;
+    color: white;
+    margin-top: 70px;
+}
+
+#bottom-logo-roll {
+    float: left;
+    margin-top: 100px;
+}
+
+@font-face {
+    font-family: Recoleta;
+    src: url(/RSC/fonts/Recoleta-RegularDEMO.otf);
+}
+
+@font-face {
+    font-family: NimbusSan;
+    src: url(/RSC/fonts/NimbusSanL-Reg.otf);
+}
+
+@font-face {
+    font-family: NimbusSanIta;
+    src: url(/RSC/fonts/NimbusSanL-RegIta.otf);
+}
+
+@font-face {
+    font-family: NimbusSanBol;
+    src: url(/RSC/fonts/NimbusSanL-Bol.otf);
+}
