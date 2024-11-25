@@ -1,6 +1,7 @@
 body {
-    background-color: #E27C97;
-    margin: 0px;
+    background: linear-gradient(162deg, rgba(184,196,95,1) 0%, rgba(196,49,153,1) 28%, rgba(181,16,158,1) 53%, rgba(255,0,112,1) 76%, rgba(244,0,255,1) 97%);
+    margin: 15px;
+    
 }
 
 #top-bar {
