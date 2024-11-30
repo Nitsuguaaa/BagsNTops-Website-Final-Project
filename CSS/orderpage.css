@@ -1,0 +1,90 @@
+body{
+    background-color: #fffff0;
+}
+
+#top-bar {
+    margin: 0;
+    padding: 0;
+}
+
+#top-bar-1 {
+    width: 25%;
+    float: left;
+    text-align: left;
+}
+
+#tb-1-title {
+    padding: 30px 16px;
+    margin-left: 100px;
+    font-size: 25px;
+    font-family: 'Recoleta';
+    color: #E27C97;
+}
+
+#top-bar-2 {
+    width: 45%;
+    float: left;
+    margin: 0px;
+}
+
+#top-bar-3 {
+    width: 30%;
+    float: left;
+    margin: 0px;
+    text-align: right;
+}
+
+#nav-bar {
+    list-style-type: none;
+    overflow: hidden;
+    margin-left: 150px;
+}
+
+#nav-bar-2 {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+#nav-bar li {
+    float: left;
+    font-size: 25px;
+    font-family: 'NimbusSan';
+    margin-right: 100px;
+}
+
+#nav-bar-2 li {
+    float: right;
+    font-size: 25px;
+}
+  
+#nav-bar li a {
+    display: block;
+    color: #E27C97;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border-radius: 3px;
+}
+
+#nav-bar-2 li a {
+    display: block;
+    color: #E27C97;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border-radius: 3px;
+}
+  
+#nav-bar li a:hover {
+    background-color: #E27C97;
+    color: #FFFFF0;
+    border-radius: 20px;
+}
+
+#nav-bar-2 li a:hover {
+    background-color: #f1f1ce;
+    border-radius: 20px;
+}
+  
