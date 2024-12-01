@@ -1,0 +1,5 @@
+.div-separator {
+    float: left;
+    width: 100%;
+    position: sticky;
+}
