@@ -7,6 +7,10 @@
 
 }
 
+body {
+    background-color: #fffff0;
+}
+
 #wrapper {
     display: flex;
     position: relative;
