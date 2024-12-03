@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+#wrapper {
+    display: flex;
+    position: relative;
+}
+
+
+#wrapper #sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: #E27C97;
+    padding: 30px 0;
+}
+
+#wrapper #sidebar h2 {
+    font-family: Recoleta;
+    color: white;
+    padding-left: 30px;
+    font-weight: 50;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+#wrapper #sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+#wrapper #sidebar ul li a {
+    font-family: NimbusSanBol;
+    color: #FFBACB;
+    display: block;
+    font-size: 20px;
+    
+}
+
+#wrapper #sidebar ul li:hover {
+    background: #FFBACB;
+    cursor: pointer;
+}
+
+#wrapper #sidebar ul li:hover a {
+    color:#fff;
+}
+
+#wrapper #sidebar ul li a img {
+    width: 25px;
+    padding-right: 8px;
+}
+
+#wrapper #main {
+    width: 100%;
+    margin-left: 250px;
+    background-color: #fffff0;
+}
+
+#wrapper #main header {
+    font-family: Recoleta;
+    font-size: 40px;
+    padding: 30px;
+    margin-left: 50px;
+}
+
+@font-face {
+    font-family: Recoleta;
+    src: url(/RSC/fonts/Recoleta-RegularDEMO.otf);
+}
+
+@font-face {
+    font-family: NimbusSanBol;
+    src: url(/RSC/fonts/NimbusSanL-Bol.otf);
+}
