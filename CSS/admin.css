@@ -75,6 +75,32 @@ body {
     margin-left: 50px;
 }
 
+#content-table {
+    border-collapse: collapse;
+    margin: 90px 0 0 30px;
+    font-size: 20px;
+    width: 1600px;
+    max-height: 1020px;
+    border: 1px solid black;
+
+
+}
+
+#content-table thead tr {
+    color: black;
+    font-family: Recoleta;
+    text-align: center;
+}
+
+#content-table th,
+#content-table td {
+    padding: 12px 15px;
+}
+
+#content-table td {
+    text-align: right;
+}
+
 @font-face {
     font-family: Recoleta;
     src: url(/RSC/fonts/Recoleta-RegularDEMO.otf);
