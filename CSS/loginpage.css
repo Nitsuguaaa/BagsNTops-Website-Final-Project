@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/RSC/loginpage/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.form-box {
+    width: 850px;
+    height: 535px;
+    position: relative;
+    margin: 6% auto;
+    background: #fffff0;
+    padding: 5px;
+    overflow: hidden;
+    
+}
+
+.button-box {
+    width: 240px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    font-family: "NimbusSanBol";
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #e27e97;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-field {
+    width: 550px;
+    padding: 10px 0;
+    margin-top: 5px;
+    margin-left: 100px;
+    border: 1px solid black;
+    outline: none;
+    background: transparent;
+}
+
+label {
+    margin-left: 100px;
+    font-family: "NimbusSanBol";
+    font-size: 12px;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-left: 100%;
+    background: #e27e97;
+    outline: none;
+    font-family: "NimbusSanBol";
+    color: #fff;
+    border: none;
+    font-size: 20px;
+}
+
+.chech-box {
+    margin: 30px 10px 23px 100px;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+    font-family: "NimbusSan";
+    width: 100%;
+}
+
+#login {
+    left: 50px;
+}
+
+#signup {
+    left: 1050px;
+}
+
+
+
+
+@font-face {
+    font-family: Recoleta;
+    src: url(/RSC/fonts/Recoleta-RegularDEMO.otf);
+}
+
+@font-face {
+    font-family: NimbusSan;
+    src: url(/RSC/fonts/NimbusSanL-Reg.otf);
+}
+
+@font-face {
+    font-family: NimbusSanIta;
+    src: url(/RSC/fonts/NimbusSanL-RegIta.otf);
+}
+
+@font-face {
+    font-family: NimbusSanBol;
+    src: url(/RSC/fonts/NimbusSanL-Bol.otf);
+}
