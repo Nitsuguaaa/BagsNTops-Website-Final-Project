@@ -1,4 +1,27 @@
-<?php session_start();?>
+<?php
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bagsntops";
+
+$conn = new mysqli($host, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+$productsql = "SELECT * FROM products";
+$prodres = $conn->query($productsql);
+
+
+
+
+$conn->close()
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +57,21 @@
         <div id="mc-left">
             <hr id="top-hr">
             <div id="products-grid">
+                <?php 
+                if ($prodres->num_rows > 0) {
+                    while($row = $prodres->fetch_assoc()) {
+                        echo "<div id='product-card'>";
+                        echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['productName']) . "' class='product-image'>";
+                        echo "<h2>" . $row['productName'] . "</h2>";
+                        echo "<p>Price: $" . $row['price'] . "</p>";
+                        echo "<p>" .$row['prodDescription'] . "</p>";
+                        echo "</div>";
+                    }
+                
+                } else {
+                    echo "No products found.";
+                }
+                ?>
             </div>
         </div>
         <div id="mc-right">

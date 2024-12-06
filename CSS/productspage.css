@@ -113,14 +113,68 @@ body{
 }
 
 #products-grid {
-    margin-left: 40px;
     margin-top: 20px;
-    background-color: aqua;
     height: 700px;
+    width: 930px;
     display: grid;
-    grid-template-columns: repeat(4, 250px);
-    padding: 10px;
-    padding-left: 40px;
+    grid-template-columns: repeat(3, 250px);
+    padding: 20px;
     justify-content: center;
     overflow-y: scroll;
+    gap: 15px;
+    float: right;
+}
+
+#products-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+#product-card {
+    border-radius: 10px;
+    padding: 10px;
+    height: 320px;
+    width: 220px;
+    text-align: center;
+
+}
+
+#product-card img {
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 5px 5px 8px #888888;
+}
+
+#product-card h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    font-family: "NimbusSanBol";
+}
+
+#product-card p {
+    margin: 5px 0;
+    font-family: "NimbusSan";
+}
+
+@font-face {
+    font-family: Recoleta;
+    src: url(/RSC/fonts/Recoleta-RegularDEMO.otf);
+}
+
+@font-face {
+    font-family: NimbusSan;
+    src: url(/RSC/fonts/NimbusSanL-Reg.otf);
+}
+
+@font-face {
+    font-family: NimbusSanIta;
+    src: url(/RSC/fonts/NimbusSanL-RegIta.otf);
+}
+
+@font-face {
+    font-family: NimbusSanBol;
+    src: url(/RSC/fonts/NimbusSanL-Bol.otf);
 }
