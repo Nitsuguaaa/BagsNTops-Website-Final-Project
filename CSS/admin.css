@@ -70,10 +70,35 @@ body {
 
 #wrapper #main header {
     font-family: Recoleta;
-    font-size: 40px;
+    font-size: 30px;
     padding: 30px;
     margin-left: 50px;
+    color: #fff;
 }
+
+#pagetitle {
+    border-radius: 10px;
+    background-color: #E27C97;
+    width: 270px;
+    text-align: center;
+}
+
+#btn  {
+    padding: 20px;
+    display: flex;
+    float: right;
+    padding-right: 50px;
+}
+
+#add-btn {
+    font-size: 25px;
+    color: #fff;
+    background-color: #E27C97;
+    font-family: "Recoleta";
+    border: 0;
+    padding: 10px;
+}
+
 
 #content-table {
     border-collapse: collapse;
