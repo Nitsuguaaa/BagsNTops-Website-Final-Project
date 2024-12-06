@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fffff0;
+}
+
+/*.form-box {
+    width: 850px;
+    height: 535px;
+    position: relative;
+    margin: 6% auto;
+    background: #fffff0;
+    padding: 5px;
+    overflow: hidden;
+    
+}*/
+
+#sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: #E27C97;
+    padding: 30px 0;
+}
