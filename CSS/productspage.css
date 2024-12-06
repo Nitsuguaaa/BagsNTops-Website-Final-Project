@@ -140,8 +140,8 @@ body{
     height: 700px;
     width: 930px;
     display: grid;
+    padding-left: 90px;
     grid-template-columns: repeat(3, 250px);
-    padding: 20px;
     justify-content: center;
     overflow-y: scroll;
     gap: 15px;
