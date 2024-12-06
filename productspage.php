@@ -33,8 +33,7 @@
     <div id="main-content">
         <div id="mc-left">
             <hr id="top-hr">
-            <div id="products">
-                sajkhdfgdsfkjhg
+            <div id="products-grid">
             </div>
         </div>
         <div id="mc-right">
