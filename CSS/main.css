@@ -255,6 +255,50 @@ html, body {
     font-size: 30px;
 }
 
+.partthree {
+    background: linear-gradient(162deg, rgba(184,196,95,1) 0%, rgba(196,49,153,1) 28%, rgba(181,16,158,1) 53%, rgba(255,0,112,1) 76%, rgba(244,0,255,1) 97%);
+    height: 900px;
+    padding: 20px;
+    display: flex;
+}
+
+
+.partthree .nav-bar li {
+    margin-top: 25px;
+    margin-left: -10px;
+}
+
+.partthree main {
+    margin-top: -10px;
+}
+
+.partthree aside {
+    float: left;
+    margin: -20px;
+}
+
+.partthree .main-content {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+}
+
+.partthree h1 {
+    font-family: Recoleta;
+    text-align: right;
+    font-size: 150px;
+    color: white;
+    margin-right: 40px;
+}
+
+.partthree p {
+    font-family: Inter;
+    text-align: right;
+    font-size: 40px;
+    color: white;
+    margin-right: 40px;
+}
+
 @font-face {
     font-family: Recoleta;
     src: url(/RSC/fonts/Recoleta-RegularDEMO.otf);

@@ -17,7 +17,7 @@
                 <ul class="nav-bar">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#news">Shop</a></li>
-                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
                 </ul>
             </div>
             <div class="top-bar-3">
@@ -82,6 +82,25 @@
                 <p>Lorem ipsum dolor sit amet consectetur. Tristique tempus lacus lacus parturient tellus urna. Purus pharetra massa pulvinar semper dictum montes elementum.</p>
             </div>
         </div>
+    </div>
+
+    <div class="partthree">
+        <aside>
+            <img src="/RSC/home-page/aboutus.png" style="height:940px; display: block;">
+        </aside>
+        <main>
+            <div class="top-bar">
+                <ul class="nav-bar">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#news">Shop</a></li>
+                    <li><a href="#contact">Blog</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <h1>About Us.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur. Neque eget suspendisse vel hac odio faucibus mi. Nisl tellus tempor fringilla pulvinar blandit. Viverra sagittis augue duis at. Quam tincidunt duis congue interdum. Lobortis sagittis nibh quisque justo. Vitae nec leo diam massa risus egestas condimentum. Ac at ut mattis nunc penatibus.</p>
+            </div>
+        </main>
     </div>
 </body>
 </html>
