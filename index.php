@@ -11,21 +11,21 @@
     <link rel="stylesheet" href="/CSS/main.css">
 </head>
 <body>
-    <div class="partone">
+    <div class="partone" id="one">
         <header>
             <div class="top-bar-1">
                 <section class="tb-1-title">Bags N' Tops</section>
             </div>
             <div class="top-bar-2">
                 <ul class="nav-bar">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#one">Home</a></li>
                     <li><a href="productspage.php">Shop</a></li>
-                    <li><a href="aboutus.php">About Us</a></li>
+                    <li><a href="#three">About Us</a></li>
                 </ul>
             </div>
             <div class="top-bar-3">
                 <ul class="nav-bar-2">
-                    <li><a href="#home"><img src="RSC/nav-bar-icons/person-icon.png" width="25px" height="25px"></a></li>
+                    <li><a href="loginpage.php"><img src="RSC/nav-bar-icons/person-icon.png" width="25px" height="25px"></a></li>
                     <li><a href="#news"><img src="RSC/nav-bar-icons/bag-icon.png" width="25px" height="25px"></a></li>
                 </ul>
             </div>
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <div class="parttwo">
+    <div class="parttwo" id="two">
         <header>Why Choose Bags N' Tops?</header>
         <div class="container">
             <div class="item">
@@ -87,16 +87,16 @@
         </div>
     </div>
 
-    <div class="partthree">
+    <div class="partthree" id="three">
         <aside>
             <img src="/RSC/home-page/aboutus.png" style="height:940px; display: block;">
         </aside>
         <main>
             <div class="top-bar">
                 <ul class="nav-bar">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#one">Home</a></li>
                     <li><a href="productspage.php">Shop</a></li>
-                    <li><a href="#contact">Blog</a></li>
+                    <li><a href="#three">About Us</a></li>
                 </ul>
             </div>
             <div class="main-content">

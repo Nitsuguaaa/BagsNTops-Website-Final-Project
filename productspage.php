@@ -39,16 +39,13 @@ $conn->close()
             <ul id="nav-bar">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#news">Shop</a></li>
-                <li><a href="index.php">About Us</a></li>
+                <li><a href="index.php#three">About Us</a></li>
             </ul>
         </div>
         <div id="top-bar-3">
             <ul id="nav-bar-2">
-                <li><a href="#home"><img src="RSC/nav-bar-icons/person-icon-pink.png" width="25px" height="25px"></a></li>
+                <li><a href="loginpage.php"><img src="RSC/nav-bar-icons/person-icon-pink.png" width="25px" height="25px"></a></li>
                 <li><a href="#news"><img src="RSC/nav-bar-icons/bag-icon-pink.png" width="25px" height="25px"></a></li>
-                <li><a href="#contact"><img src="RSC/nav-bar-icons/heart-icon-pink.png" width="25px" height="25px"></a></li>
-                <li><a href="#about"><img src="RSC/nav-bar-icons/bell-icon-pink.png" width="25px" height="25px"></a></li>
-                <li><a href="#about"><img src="RSC/nav-bar-icons/search-icon-pink.png" width="25px" height="25px"></a></li>
             </ul>
         </div>
     </div>
