@@ -37,9 +37,9 @@ $conn->close()
         </div>
         <div id="top-bar-2">
             <ul id="nav-bar">
-                <li><a href="#home">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#news">Shop</a></li>
-                <li><a href="#contact">Blog</a></li>
+                <li><a href="index.php">About Us</a></li>
             </ul>
         </div>
         <div id="top-bar-3">
@@ -56,28 +56,59 @@ $conn->close()
     <div id="main-content">
         <div id="mc-left">
             <hr id="top-hr">
-            <div id="products-grid">
-                <?php 
-                if ($prodres->num_rows > 0) {
-                    while($row = $prodres->fetch_assoc()) {
-                        echo "<div id='product-card'>";
-                        echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['productName']) . "' class='product-image'>";
-                        echo "<h2>" . $row['productName'] . "</h2>";
-                        echo "<p>Price: $" . $row['price'] . "</p>";
-                        echo "<p>" .$row['prodDescription'] . "</p>";
-                        echo "</div>";
+            <div id="prod-container">
+                <div id="products-grid">
+                    <?php 
+                    if ($prodres->num_rows > 0) {
+                        while($row = $prodres->fetch_assoc()) {
+                            echo "<div id='product-card'>";
+                            echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['productName']) . "' class='product-image'>";
+                            echo "<button id='product-button'>" . htmlspecialchars($row['productName']) . "</button>";
+                            echo "<p>Price: $" . $row['price'] . "</p>";
+                            echo "<p>" .$row['prodDescription'] . "</p>";
+                            echo "</div>";
+                        }
+                    
+                    } else {
+                        echo "No products found.";
                     }
-                
-                } else {
-                    echo "No products found.";
-                }
-                ?>
+                    ?>
+                </div>
+                <div id="prod-overview">
+                    <h1>Name of the Item</h1>
+                    <h1>Price</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
             </div>
+            <hr id="top-hr">
         </div>
         <div id="mc-right">
             <img src="RSC/home-page/front-2-img.png" alt="" width="790px" height="820px">
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const productButtons = document.querySelectorAll('#product-button');
+        const prodOverview = document.getElementById('prod-overview');
+        const productsGrid = document.getElementById('products-grid');
+
+        productButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                prodOverview.classList.add('active'); // Show #prod-overview
+                productsGrid.style.opacity = 0.5; // Dim the grid for focus
+            });
+        });
+
+        // Optional: Add a close button or click outside to close
+        prodOverview.addEventListener('click', (e) => {
+            if (e.target === prodOverview) { // Close only when clicking outside
+                prodOverview.classList.remove('active'); // Hide #prod-overview
+                productsGrid.style.opacity = 1; // Restore grid opacity
+            }
+        });
+    });
+</script>
 
 
 </body>

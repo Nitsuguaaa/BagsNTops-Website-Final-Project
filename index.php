@@ -19,7 +19,7 @@
             <div class="top-bar-2">
                 <ul class="nav-bar">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#news">Shop</a></li>
+                    <li><a href="productspage.php">Shop</a></li>
                     <li><a href="aboutus.php">About Us</a></li>
                 </ul>
             </div>
@@ -95,7 +95,7 @@
             <div class="top-bar">
                 <ul class="nav-bar">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#news">Shop</a></li>
+                    <li><a href="productspage.php">Shop</a></li>
                     <li><a href="#contact">Blog</a></li>
                 </ul>
             </div>

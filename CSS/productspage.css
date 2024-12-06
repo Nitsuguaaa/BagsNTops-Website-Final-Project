@@ -1,5 +1,6 @@
 body{
-    background-color: #fffff0;
+    background-color: #fffff0; 
+    overflow: hidden;
 }
 
 #top-bar {
@@ -99,7 +100,7 @@ body{
 }
 
 #top-hr {
-    margin-left: 200px;
+    margin-left: 160px;
     width: 75%;
     height: 2px;
     border: none;
@@ -112,8 +113,31 @@ body{
     padding-left: 20px;
 }
 
+#prod-container {
+    display: flex;
+    background-color: #E27C97;
+}
+
+#prod-overview {
+    display: none;
+    position: absolute; 
+    top: 100;
+    left: 8px;
+    width: 1003px;
+    height: 725px;
+    background-color: #fffff0;
+    z-index: 10;
+    padding: 20px;
+    text-align: right;
+}
+
+#prod-overview.active {
+    display: block;
+}
+
 #products-grid {
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     height: 700px;
     width: 930px;
     display: grid;
@@ -148,10 +172,15 @@ body{
     box-shadow: 5px 5px 8px #888888;
 }
 
-#product-card h2 {
+#product-button {
     font-size: 20px;
     margin: 0 0 10px;
     font-family: "NimbusSanBol";
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+    color: aqua; 
 }
 
 #product-card p {
