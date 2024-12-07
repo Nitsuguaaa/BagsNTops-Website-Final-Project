@@ -1,7 +1,4 @@
-<?php session_start();
-
-
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +22,7 @@
             </div>
             <div class="top-bar-3">
                 <ul class="nav-bar-2">
-                    <li><a href="loginpage.php"><img src="RSC/nav-bar-icons/person-icon.png" width="25px" height="25px"></a></li>
-                    <li><a href="#news"><img src="RSC/nav-bar-icons/bag-icon.png" width="25px" height="25px"></a></li>
+                    <li><button onclick="document.getElementById('login-form').style.display='block'" style="width: auto;margin:0px;" id="loginBtn"><img src="./RSC/nav-bar-icons/person-icon.png" alt="" width="25px" height="25px" style="margin:0px;padding-top:11px;padding-left:5px;"></button></li>
                 </ul>
             </div>
         </header>
@@ -44,7 +40,7 @@
                     Providing your fashion needs at a pretty<br>
                     cheap cost.
                 </section>
-                <button class="mc-sc-start">
+                <button class="mc-sc-start" onclick="window.open('./productspage.php', '_self')">
                     Start Shopping
                 </button>
                 <section class="mc-sc-followtext">
@@ -105,5 +101,36 @@
             </div>
         </main>
     </div>
+
+    <div id="login-form" class="modal-bg">
+        <div class="form-box animate">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+            </div>
+            <form id="login" class="input-group">
+                <label>Email</label>
+                <input type="password" class="input-field" required>
+                <label>Password</label>
+                <input type="text" class="input-field" required>
+                <button type="submit" class="submit-btn">LOGIN</button>
+            </form>
+            <form id="signup" class="input-group">
+                <label>Name</label>
+                <input type="text" class="input-field" required>
+                <label>Email</label>
+                <input type="text" class="input-field" required>
+                <label>Password</label>
+                <input type="text" class="input-field" required>
+                <label>Confirm Password</label>
+                <input type="text" class="input-field" required>
+                <button type="submit" class="submit-btn">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./JS/login-script.js"></script>
+
 </body>
 </html>

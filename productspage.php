@@ -1,25 +1,4 @@
-<?php
-
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bagsntops";
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-$productsql = "SELECT * FROM products";
-$prodres = $conn->query($productsql);
-
-
-
-
-$conn->close()
-?>
+<?php include './PHP/db-init.php';?>
 
 
 <!DOCTYPE html>
@@ -28,7 +7,7 @@ $conn->close()
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/productspage.css">
-    <title>Order Page</title>
+    <title>Shop | Bags N' Tops</title>
 </head>
 <body>
     <div id="top-bar">
@@ -44,7 +23,7 @@ $conn->close()
         </div>
         <div id="top-bar-3">
             <ul id="nav-bar-2">
-                <li><a href="loginpage.php"><img src="RSC/nav-bar-icons/person-icon-pink.png" width="25px" height="25px"></a></li>
+                <li><button onclick="document.getElementById('login-form').style.display='block'" style="width: auto;margin:0px;" id="loginBtn"><img src="/RSC/nav-bar-icons/person-icon-pink.png" alt="" width="25px" height="25px" style="margin:0px;padding-top:11px;padding-left:5px;"></button></li>
                 <li><a href="#news"><img src="RSC/nav-bar-icons/bag-icon-pink.png" width="25px" height="25px"></a></li>
             </ul>
         </div>
@@ -55,21 +34,7 @@ $conn->close()
             <hr id="top-hr">
             <div id="prod-container">
                 <div id="products-grid">
-                    <?php 
-                    if ($prodres->num_rows > 0) {
-                        while($row = $prodres->fetch_assoc()) {
-                            echo "<div id='product-card'>";
-                            echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['productName']) . "' class='product-image'>";
-                            echo "<button id='product-button'>" . htmlspecialchars($row['productName']) . "</button>";
-                            echo "<p>Price: $" . $row['price'] . "</p>";
-                            echo "<p>" .$row['prodDescription'] . "</p>";
-                            echo "</div>";
-                        }
-                    
-                    } else {
-                        echo "No products found.";
-                    }
-                    ?>
+                    <?php include './PHP/product-db.php';?>
                 </div>
                 <div id="prod-overview">
                     <div id="prod-overview-text">
@@ -94,53 +59,37 @@ $conn->close()
         </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const productButtons = document.querySelectorAll('#product-button');
-        const prodOverview = document.getElementById('prod-overview');
-        const productsGrid = document.getElementById('products-grid');
+    <script src="./JS/product-overview.js"></script>
 
-        productButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                prodOverview.classList.add('active'); // Show #prod-overview
-                productsGrid.style.opacity = 0.5; // Dim the grid for focus
-            });
-        });
+    <div id="login-form" class="modal-bg">
+        <div class="form-box animate">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+            </div>
+            <form id="login" class="input-group">
+                <label>Email</label>
+                <input type="password" class="input-field" required>
+                <label>Password</label>
+                <input type="text" class="input-field" required>
+                <button type="submit" class="submit-btn">LOGIN</button>
+            </form>
+            <form id="signup" class="input-group">
+                <label>Name</label>
+                <input type="text" class="input-field" required>
+                <label>Email</label>
+                <input type="text" class="input-field" required>
+                <label>Password</label>
+                <input type="text" class="input-field" required>
+                <label>Confirm Password</label>
+                <input type="text" class="input-field" required>
+                <button type="submit" class="submit-btn">Create</button>
+            </form>
+        </div>
+    </div>
 
-        // Optional: Add a close button or click outside to close
-        prodOverview.addEventListener('click', (e) => {
-            if (e.target === prodOverview) { // Close only when clicking outside
-                prodOverview.classList.remove('active'); // Hide #prod-overview
-                productsGrid.style.opacity = 1; // Restore grid opacity
-            }
-        });
-    });
-
-
-    const plus = document.querySelector(".plus");
-        minus = document.querySelector(".minus");
-        num = document.querySelector(".num");
-
-        let a = 1;
-
-        plus.addEventListener("click", ()=>{
-            a++;
-            a = (a < 10) ? "0" + a : a;
-            num.innerText = a;
-            console.log("a");
-        });
-
-        minus.addEventListener("click", ()=>{
-            if (a > 1) {
-                a--;
-                a = (a < 10) ? "0" + a : a;
-                num.innerText = a;
-                console.log("a");
-            }
-        });
-
-
-</script>
+    <script src="./JS/login-script.js"></script>
 
 
 </body>
