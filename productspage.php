@@ -38,7 +38,7 @@ $conn->close()
         <div id="top-bar-2">
             <ul id="nav-bar">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#news">Shop</a></li>
+                <li><a href="productspage.php">Shop</a></li>
                 <li><a href="index.php#three">About Us</a></li>
             </ul>
         </div>
@@ -72,9 +72,19 @@ $conn->close()
                     ?>
                 </div>
                 <div id="prod-overview">
-                    <h1>Name of the Item</h1>
-                    <h1>Price</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <div id="prod-overview-text">
+                        <h1>Name of the Item</h1><br>
+                        <h1>Price</h1><br>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div id="prod-add-cart-btns">
+                        <button class="add-crt-btn">Add to Cart</button>
+                        <div id="item-ctr">
+                            <span class="minus">-</span>
+                            <span class="num">01</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr id="top-hr">
@@ -105,6 +115,31 @@ $conn->close()
             }
         });
     });
+
+
+    const plus = document.querySelector(".plus");
+        minus = document.querySelector(".minus");
+        num = document.querySelector(".num");
+
+        let a = 1;
+
+        plus.addEventListener("click", ()=>{
+            a++;
+            a = (a < 10) ? "0" + a : a;
+            num.innerText = a;
+            console.log("a");
+        });
+
+        minus.addEventListener("click", ()=>{
+            if (a > 1) {
+                a--;
+                a = (a < 10) ? "0" + a : a;
+                num.innerText = a;
+                console.log("a");
+            }
+        });
+
+
 </script>
 
 
