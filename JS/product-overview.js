@@ -19,7 +19,7 @@ minus.addEventListener("click", () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const productButtons = document.querySelectorAll('#product-button');
+    const productButtons = document.querySelectorAll('#product-card');
     const prodOverview = document.getElementById('prod-overview');
     const productsGrid = document.getElementById('products-grid');
 
