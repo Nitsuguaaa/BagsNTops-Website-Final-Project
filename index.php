@@ -1,4 +1,12 @@
-<?php session_start();?>
+<?php session_start();
+
+/*
+
+REMINDER TO ADD DB INIT WHEN PROJECT IS 90% FINISHED
+db_init();
+
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
