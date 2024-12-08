@@ -38,7 +38,7 @@ class DBInitiator
                 return "Error creating database: " . $this->conn->error;
             }
             $this->conn->select_db('bagsntopsdb');
-            $this->conn->multi_query(file_get_contents('./bagsntopsdb.sql'));
+            $this->conn->multi_query(file_get_contents('../RSC/database/bagsntopsdb.sql'));
             $this->conn->close();
             return 'database successfully created!';
         }
