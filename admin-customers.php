@@ -1,10 +1,13 @@
-<?php session_start();?>
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Customers</title>
+    <title>User Management | Admin</title>
     <link rel="stylesheet" href="/CSS/admin.css">
 </head>
 <body>
@@ -12,9 +15,9 @@
         <div id="sidebar">
             <h2>Admin.</h2>
             <ul>
-                <li><a href="admin-receipt.html"><img src="/RSC/admin-page-icons/receipt.png">Receipt</a></li>
-                <li><a href="admin-customers.html"><img src="/RSC/admin-page-icons/customers.png">List of Customers</a></li>
-                <li><a href="admin-inventory.html"><img src="/RSC/admin-page-icons/inventory.png"></i>Inventory</a></li>
+                <li><a href="admin-receipt.php"><img src="/RSC/admin-page-icons/receipt.png">Transaction Log</a></li>
+                <li><a href="admin-inventory.php"><img src="/RSC/admin-page-icons/inventory.png"></i>Inventory</a></li>
+                <li><a href="admin-customers.php"><img src="/RSC/admin-page-icons/customers.png">User Management</a></li>
             </ul>
         </div>
 
@@ -27,21 +30,30 @@
                 <table id="content-table" border="1">
                     <thead>
                         <tr>
-                            <th>Customer ID</th>
-                            <th>Address</th>
-                            <th>Contact</th>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!--This part will get deleted-->
-                        <tr>
-                            <td>001</td>
-                            <td>Miguel</td>
-                            <td>12/3/2024</td>
-                            <td></td>
-                        </tr>
-                        <!--This part will get deleted-->
+                        
+                        <?php
+                            require('./PHP/db_functions.php');
+                            $accSel = new select('accountstb');
+                            $result_array = $accSel->selectData($column='accountId, accountName,accountEmail');
+
+                            for($x = 0; $x < count($result_array); $x++) {
+                                echo "<tr>";
+                                echo "<td>".$result_array[$x]["accountId"]."</td>";
+                                echo "<td>".$result_array[$x]["accountName"]."</td>";
+                                echo "<td>".$result_array[$x]["accountEmail"]."</td>";
+                                echo "<td><button>Edit</button><button>Delete</button></td>";
+                                echo "</tr>";
+                            }
+                            
+                            ?>
+                            
                     </tbody>
                 </table>
             </div>

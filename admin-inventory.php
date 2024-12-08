@@ -1,10 +1,13 @@
-<?php session_start();?>
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory</title>
+    <title>Inventory | Admin</title>
     <link rel="stylesheet" href="/CSS/admin.css">
 </head>
 <body>
@@ -12,9 +15,9 @@
         <div id="sidebar">
             <h2>Admin.</h2>
             <ul>
-                <li><a href="admin-receipt.html"><img src="/RSC/admin-page-icons/receipt.png">Receipt</a></li>
-                <li><a href="admin-customers.html"><img src="/RSC/admin-page-icons/customers.png">List of Customers</a></li>
-                <li><a href="admin-inventory.html"><img src="/RSC/admin-page-icons/inventory.png"></i>Inventory</a></li>
+                <li><a href="admin-receipt.php"><img src="/RSC/admin-page-icons/receipt.png">Transaction Log</a></li>
+                <li><a href="admin-inventory.php"><img src="/RSC/admin-page-icons/inventory.png"></i>Inventory</a></li>
+                <li><a href="admin-customers.php"><img src="/RSC/admin-page-icons/customers.png">User Management</a></li>
             </ul>
         </div>
 
@@ -30,7 +33,8 @@
                 <table id="content-table" border="1">
                     <thead>
                         <tr>
-                            <th>Products</th>
+                            <th>Product ID</th>
+                            <th>Name</th>
                             <th>Stock</th>
                             <th>Price</th>
                             <th>Delete</th>
@@ -38,12 +42,21 @@
                     </thead>
                     <tbody>
                         <!--This part will get deleted-->
-                        <tr>
-                            <td>T-shirt</td>
-                            <td>30</td>
-                            <td>500</td>
-                            <td>button</td>
-                        </tr>
+                            <?php
+                            require('./PHP/db_functions.php');
+                            $accSel = new select('productstb');
+                            $result_array = $accSel->selectData($column='productId, productName, productPrice, productStock');
+
+                            for($x = 0; $x < count($result_array); $x++) {
+                                echo "<tr>";
+                                echo "<td>".$result_array[$x]["productId"]."</td>";
+                                echo "<td>".$result_array[$x]["productName"]."</td>";
+                                echo "<td>".$result_array[$x]["productStock"]."</td>";
+                                echo "<td>".$result_array[$x]["productPrice"]."</td>";
+                                echo "<td><button>Edit</button><button>Delete</button></td>";
+                                echo "</tr>";
+                            }
+                            ?>
                         <!--This part will get deleted-->
                     </tbody>
                 </table>
