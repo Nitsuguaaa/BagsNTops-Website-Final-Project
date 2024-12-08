@@ -47,7 +47,8 @@ session_start();
                                 echo "<td>".$result_array[$x]["transactionId"]."</td>";
                                 echo "<td>".$result_array[$x]["accountAddress"]."</td>";
                                 echo "<td>".$result_array[$x]["accountPNum"]."</td>";
-                                echo "<td><button>Edit</button><button>Delete</button></td>";
+                                echo "<td><button id='action-btns'><img src='/RSC/admin-page-icons/details-btn.png'></button>";
+                                echo "<button id='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
                             ?>

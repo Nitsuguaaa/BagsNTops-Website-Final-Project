@@ -53,7 +53,8 @@ session_start();
                                 echo "<td>".$result_array[$x]["productName"]."</td>";
                                 echo "<td>".$result_array[$x]["productStock"]."</td>";
                                 echo "<td>".$result_array[$x]["productPrice"]."</td>";
-                                echo "<td><button>Edit</button><button>Delete</button></td>";
+                                echo "<td><button id='action-btns'><img src='/RSC/admin-page-icons/edit-btn.png'></button>";
+                                echo "<button id='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
                             ?>

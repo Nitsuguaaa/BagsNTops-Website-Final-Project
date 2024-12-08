@@ -126,6 +126,19 @@ body {
     text-align: right;
 }
 
+#content-table td:last-child {
+    text-align: center;
+    width: 150px;
+    
+}
+
+#content-table #action-btns{
+    background-color: transparent;
+    border: none;
+    padding-left: 20px;
+    
+}
+
 @font-face {
     font-family: Recoleta;
     src: url(/RSC/fonts/Recoleta-RegularDEMO.otf);
