@@ -174,7 +174,7 @@ class select
             $this->command .= "{$column} FROM {$this->table};";
         }
 
-        echo $this->command;
+        //echo $this->command;
 
         $result = $this->db->conn->query($this->command);
     

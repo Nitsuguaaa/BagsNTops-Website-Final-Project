@@ -117,11 +117,11 @@ db_init();
                 <button type="button" class="toggle-btn" onclick="login()">Log In</button>
                 <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
             </div>
-            <form id="login" class="input-group">
+            <form id="login" class="input-group" action="./PHP/login_functions.php" method="post">
                 <label>Email</label>
-                <input type="password" class="input-field" required>
+                <input type="email" class="input-field" required>
                 <label>Password</label>
-                <input type="text" class="input-field" required>
+                <input type="password" class="input-field" required>
                 <button type="submit" class="submit-btn">LOGIN</button>
             </form>
             <form id="signup" class="input-group">
