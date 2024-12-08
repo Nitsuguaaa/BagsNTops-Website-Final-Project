@@ -23,6 +23,7 @@ session_start();
         <div id="main">
             <header>
                 <div id="pagetitle">Transaction Log</div>
+
             </header>
             <hr>
             <div id="main-content"></div>
@@ -47,8 +48,8 @@ session_start();
                                 echo "<td>".$result_array[$x]["transactionId"]."</td>";
                                 echo "<td>".$result_array[$x]["accountAddress"]."</td>";
                                 echo "<td>".$result_array[$x]["accountPNum"]."</td>";
-                                echo "<td><button id='action-btns'><img src='/RSC/admin-page-icons/details-btn.png'></button>";
-                                echo "<button id='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
+                                echo "<td><button id='edit-button' class='action-btns'><img src='/RSC/admin-page-icons/details-btn.png'></button>";
+                                echo "<button class='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -57,5 +58,35 @@ session_start();
             </table>
         </div>
     </div>
+
+
+    <div id="edit-form" class="modal-bg">
+        <div class="details-box animate">
+            <div class="top-head">
+                <header>Customer Details</header>
+                Name:
+                <br>Address:
+                <br>Contact:
+            </div>
+
+            <table border="1" id="details-table">
+                <thead>
+                    <th>Product Name</th>
+                    <th>Product ID</th>
+                    <th>Quantity</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sample Product Name</td>
+                        <td>Sample Product ID</td>
+                        <td>Sample Quantity</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    <script src="./JS/admin-script.js"></script>
+
 </body>
 </html>
