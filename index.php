@@ -1,5 +1,7 @@
 <?php session_start();
-
+require('./PHP/db_functions.php');
+$initDB = new DBInitiator();
+$initDB->checkDB(); //check if bagsntopsdb exists. If not then import bagsntops.sql
 /*
 
 REMINDER TO ADD DB INIT WHEN PROJECT IS 90% FINISHED
