@@ -161,7 +161,6 @@ body{
 #prod-add-cart-btns {
     display: flex;
     float: right;
-    margin-right: 80px;
     width: 330px;
     height: 50px;
 
@@ -185,6 +184,7 @@ body{
     justify-content: center;
     font-family: "NimbusSanBol";
     border: 2px solid black;
+    
 }
 
 #item-ctr span {
@@ -192,6 +192,7 @@ body{
     text-align: center;
     font-size:20px;
     cursor: pointer;
+    font-weight: 1000;
 }  
 
 #item-ctr span.num {
@@ -225,11 +226,12 @@ body{
 #product-card {
     border-radius: 10px;
     padding: 10px;
-    height: 320px;
+    height: auto;
     width: 220px;
-    text-align: center;
+    cursor: pointer;
 
 }
+
 
 #product-card img {
     width: 60%;
@@ -241,15 +243,13 @@ body{
     box-shadow: 5px 5px 8px #888888;
 }
 
-#product-button {
+#product-card h2 {
     font-size: 20px;
     margin: 0 0 10px;
     font-family: "NimbusSanBol";
     border: none;
     background-color: transparent;
-    text-decoration: underline;
-    cursor: pointer;
-    color: aqua; 
+
 }
 
 #product-card p {
