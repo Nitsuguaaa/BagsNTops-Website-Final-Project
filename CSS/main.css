@@ -126,6 +126,7 @@ html {
     width: 100%;
 }
 
+
 .mc-side-pic {
     float: left;
     margin-left: 210px;
@@ -308,7 +309,7 @@ html {
 }
 
 .partthree p {
-    font-family: Inter;
+    font-family: "Arial";
     text-align: right;
     font-size: 40px;
     color: white;
