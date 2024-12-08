@@ -23,7 +23,6 @@ session_start();
         <div id="main">
             <header>
                 <div id="pagetitle">Transaction Log</div>
-
             </header>
             <hr>
             <div id="main-content"></div>
@@ -37,23 +36,21 @@ session_start();
                     </tr>
                 </thead>
                 <tbody>
-                    <!--This part will get deleted-->
                     <?php
                             require('./PHP/db_functions.php');
                             $accSel = new select('transactionstb');
-                            $result_array = $accSel->selectData($column='transactionId, accountAddress, accountPNum');
+                            $result_array = $accSel->selectData($column='transactionId, accountId, accountAddress, accountPNum');
 
                             for($x = 0; $x < count($result_array); $x++) {
                                 echo "<tr>";
                                 echo "<td>".$result_array[$x]["transactionId"]."</td>";
                                 echo "<td>".$result_array[$x]["accountAddress"]."</td>";
                                 echo "<td>".$result_array[$x]["accountPNum"]."</td>";
-                                echo "<td><button id='edit-button' class='action-btns'><img src='/RSC/admin-page-icons/details-btn.png'></button>";
+                                echo "<td><button id='edit-button' data-id='" .$result_array[$x]['accountId']. "' class='action-btns'><img src='/RSC/admin-page-icons/details-btn.png'></button>";
                                 echo "<button class='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
                             ?>
-                    <!--This part will get deleted-->
                 </tbody>
             </table>
         </div>
