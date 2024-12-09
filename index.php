@@ -1,7 +1,8 @@
 <?php session_start();
-require('./PHP/db_functions.php');
-$initDB = new DBInitiator();
-$initDB->checkDB(); //check if bagsntopsdb exists. If not then import bagsntops.sql
+
+//require('./PHP/db_functions.php');
+//$initDB = new DBInitiator();
+//$initDB->checkDB(); //check if bagsntopsdb exists. If not then import bagsntops.sql
 /*
 
 REMINDER TO ADD DB INIT WHEN PROJECT IS 90% FINISHED
@@ -119,11 +120,11 @@ db_init();
                 <button type="button" class="toggle-btn" onclick="login()">Log In</button>
                 <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
             </div>
-            <form id="login" class="input-group" action="./PHP/login_functions.php" method="post">
+            <form id="login" class="input-group">
                 <label>Email</label>
-                <input type="email" class="input-field" required>
+                <input type="email" class="input-field" id="userEmail" required>
                 <label>Password</label>
-                <input type="password" class="input-field" required>
+                <input type="password" class="input-field" id="userPassword" required>
                 <button type="submit" class="submit-btn">LOGIN</button>
             </form>
             <form id="signup" class="input-group">

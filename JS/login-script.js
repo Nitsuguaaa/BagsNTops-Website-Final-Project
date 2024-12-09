@@ -23,3 +23,33 @@ function login() {
     y.style.left = "850px";
     z.style.left = "0px";
 }
+
+document.getElementById("login").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+
+    fetch('PHP/login_functions.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        // Check if the response is OK (200 status)
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+
+        // Only read the response as JSON here
+        return response.json();
+    })
+    .then(data => {
+        console.log("Response data:", data); // Log the parsed data
+        if (data.success) {
+            console.log("login success!");
+        } else {
+            console.log("failed to login");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});

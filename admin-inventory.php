@@ -63,5 +63,7 @@ session_start();
                 </table>
         </div>
     </div>
+
+    <div id="popup-form" class="modal-bg"></div>
 </body>
 </html>

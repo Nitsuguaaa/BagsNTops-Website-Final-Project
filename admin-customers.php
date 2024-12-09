@@ -48,8 +48,8 @@ session_start();
                                 echo "<td>".$result_array[$x]["accountId"]."</td>";
                                 echo "<td>".$result_array[$x]["accountName"]."</td>";
                                 echo "<td>".$result_array[$x]["accountEmail"]."</td>";
-                                echo "<td><button id='action-btns'><img src='/RSC/admin-page-icons/edit-btn.png'></button>";
-                                echo "<button id='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
+                                echo "<td><button id='show-button' class='action-btns'><img src='/RSC/admin-page-icons/edit-btn.png'></button>";
+                                echo "<button class='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
                             
@@ -60,5 +60,20 @@ session_start();
             </div>
         </div>
     </div>
+
+    <div id="popup-form" class="modal-bg">
+        <div class="edit-customer-box animate">
+            <form class="cs-input-group">
+                <label>Name:</label>
+                <input type="text" class="cs-input-field">
+                <br>
+                <label>Password:</label>
+                <input type="text" class="cs-input-field">
+                <button type="submit" class="submit-btn">Done</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./JS/admin-script.js"></script>
 </body>
 </html>

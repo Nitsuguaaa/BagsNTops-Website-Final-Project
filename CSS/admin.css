@@ -213,3 +213,49 @@ body {
 #details-table td {
     text-align: right;
 }
+
+.edit-customer-box {
+    width: 900px;
+    height: 250px;
+    position: relative;
+    margin: 10% auto;
+    background: #fffff0;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid #E27C97;
+    font-family: "Recoleta";
+    padding: 20px 20px 20px 35px;
+}
+
+.cs-input-group {
+    position: absolute;
+    width: 820px;
+}
+
+.cs-input-field {
+    width: 700px;
+    padding: 10px 0;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border: 1px solid gray;
+    outline: none;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.submit-btn {
+    width: 20%;
+    margin-left: 40%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    background: #e27e97;
+    outline: none;
+    font-family: "Recoleta";
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    margin-top: 40px;
+}

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const editButtons = document.querySelectorAll('#edit-button');
-    const modal = document.getElementById('edit-form');
+    const editButtons = document.querySelectorAll('#show-button');
+    const modal = document.getElementById('popup-form');
 
     editButtons.forEach(button => {
         button.addEventListener('click', () => {

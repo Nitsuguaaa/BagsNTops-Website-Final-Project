@@ -46,7 +46,7 @@ session_start();
                                 echo "<td>".$result_array[$x]["transactionId"]."</td>";
                                 echo "<td>".$result_array[$x]["accountAddress"]."</td>";
                                 echo "<td>".$result_array[$x]["accountPNum"]."</td>";
-                                echo "<td><button id='edit-button' data-id='" .$result_array[$x]['accountId']. "' class='action-btns'><img src='/RSC/admin-page-icons/details-btn.png'></button>";
+                                echo "<td><button id='show-button' data-id='" .$result_array[$x]['accountId']. "' class='action-btns'><img src='/RSC/admin-page-icons/details-btn.png'></button>";
                                 echo "<button class='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
@@ -57,7 +57,7 @@ session_start();
     </div>
 
 
-    <div id="edit-form" class="modal-bg">
+    <div id="popup-form" class="modal-bg">
         <div class="details-box animate">
             <div class="top-head">
                 <header>Customer Details</header>
