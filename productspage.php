@@ -46,9 +46,15 @@ session_start();
                 </div>
                 <div id="prod-overview">
                     <div id="prod-overview-text">
-                        <h1>Name of the Item</h1><br>
-                        <h1>Price</h1><br>
-                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <div id="image-left">
+                            <img src="./RSC/products-img/image1.png" alt="" id="productImage">
+                        </div>
+                        <div class="content-right">
+                            <span id="productName">Name of the Item</span><br>
+                            <span id="productPrice">Price</span><br>
+                            <span id="productStock">Stock</span><br><br><br>
+                            <span id="productDescription">Lorem ipsum dolor sit amet consectetur.</span>
+                        </div>
                     </div>
                     <div id="prod-add-cart-btns">
                         <button class="add-crt-btn">Add to Cart</button>
