@@ -1,5 +1,5 @@
 <?php 
-include_once './PHP/db-init.php';
+//include_once './PHP/db-init.php';
 session_start();
 ?>
 
@@ -42,7 +42,7 @@ session_start();
             <hr id="top-hr">
             <div id="prod-container">
                 <div id="products-grid">
-                    <?php include './PHP/product-db.php';?>
+                    <?php include_once './PHP/product-db.php';?>
                 </div>
                 <div id="prod-overview">
                     <div id="prod-overview-text">

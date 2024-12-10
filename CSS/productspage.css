@@ -235,7 +235,7 @@ body{
 
 #product-card img {
     width: 60%;
-    height: auto;
+    height: 180px;
     border-radius: 8px;
     margin-bottom: 10px;
     background-color: #fff;
