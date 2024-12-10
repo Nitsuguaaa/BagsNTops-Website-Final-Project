@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once('db_functions.php');
+//include_once('db_functions.php');
 include_once('pw_functions.php');
 
 // Ensure the user input is validated before querying the database
