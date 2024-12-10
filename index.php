@@ -1,6 +1,11 @@
 <?php session_start();
 
-//require('./PHP/db_functions.php');
+if(!isset($_SESSION['loggedIn'])) {
+    $_SESSION['loggedIn'] = 'no';
+}
+
+echo "<script>console.log('current session in index: ". $_SESSION['loggedIn'] ."');</script>";
+include_once('./PHP/db_functions.php');
 //$initDB = new DBInitiator();
 //$initDB->checkDB(); //check if bagsntopsdb exists. If not then import bagsntops.sql
 /*
@@ -19,9 +24,15 @@ db_init();
     <link rel="stylesheet" href="/CSS/main.css">
 </head>
 <body>
+    <div id="logout-screen">
+        <div id="logout-box">
+            <button id="logoutBtn">Logout</button>
+        </div>    
+    </div>
     <div class="partone" id="one">
         <header>
             <div class="top-bar-1">
+            
                 <section class="tb-1-title">Bags N' Tops</section>
             </div>
             <div class="top-bar-2">
@@ -33,7 +44,7 @@ db_init();
             </div>
             <div class="top-bar-3">
                 <ul class="nav-bar-2">
-                    <li><button onclick="document.getElementById('login-form').style.display='block'" style="width: auto;margin:0px;" id="loginBtn"><img src="./RSC/nav-bar-icons/person-icon.png" alt="" width="25px" height="25px" style="margin:0px;padding-top:11px;padding-left:5px;"></button></li>
+                    <li><button id="loginBtn"><img src="./RSC/nav-bar-icons/person-icon.png" alt="" width="25px" height="25px" style="margin:0px;padding-top:11px;padding-left:5px;"></button></li>
                 </ul>
             </div>
         </header>
@@ -117,17 +128,17 @@ db_init();
         <div class="form-box animate">
             <div class="button-box">
                 <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+                <button type="button" class="toggle-btn" onclick="loginAnimate()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="signupAnimate()">Sign Up</button>
             </div>
-            <form id="login" class="input-group">
+            <form id="loginForm" class="input-group" method="POST">
                 <label>Email</label>
-                <input type="email" class="input-field" id="userEmail" required>
+                <input type="email" class="input-field" name="loginEmail" id="loginEmail" autocomplete="email" required>
                 <label>Password</label>
-                <input type="password" class="input-field" id="userPassword" required>
+                <input type="password" class="input-field" name="loginPassword" id="loginPassword" autocomplete="current-password" required>
                 <button type="submit" class="submit-btn">LOGIN</button>
             </form>
-            <form id="signup" class="input-group">
+            <form id="signupForm" class="input-group">
                 <label>Name</label>
                 <input type="text" class="input-field" required>
                 <label>Email</label>
@@ -141,6 +152,7 @@ db_init();
         </div>
     </div>
 
+    <script src="./JS/login-animations.js"></script>
     <script src="./JS/login-script.js"></script>
 
 </body>

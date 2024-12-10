@@ -1,4 +1,7 @@
-<?php include './PHP/db-init.php';?>
+<?php 
+include_once './PHP/db-init.php';
+session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -10,6 +13,11 @@
     <title>Shop | Bags N' Tops</title>
 </head>
 <body>
+    <div id="logout-screen">
+        <div id="logout-box">
+            <button id="logoutBtn">Logout</button>
+        </div>    
+    </div>
     <div id="top-bar">
         <div id="top-bar-1">
             <section id="tb-1-title">Bags N' Tops</section>
@@ -23,7 +31,7 @@
         </div>
         <div id="top-bar-3">
             <ul id="nav-bar-2">
-                <li><button onclick="document.getElementById('login-form').style.display='block'" style="width: auto;margin:0px;" id="loginBtn"><img src="/RSC/nav-bar-icons/person-icon-pink.png" alt="" width="25px" height="25px" style="margin:0px;padding-top:11px;padding-left:5px;"></button></li>
+                <li><button id="loginBtn"><img src="./RSC/nav-bar-icons/person-icon-pink.png" alt="" width="25px" height="25px" style="margin:0px;padding-top:11px;padding-left:5px;"></button></li>
                 <li><a href="#news"><img src="RSC/nav-bar-icons/bag-icon-pink.png" width="25px" height="25px"></a></li>
             </ul>
         </div>
@@ -65,17 +73,17 @@
         <div class="form-box animate">
             <div class="button-box">
                 <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+                <button type="button" class="toggle-btn" onclick="loginAnimate()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="signupAnimate()">Sign Up</button>
             </div>
-            <form id="login" class="input-group">
+            <form id="loginForm" class="input-group" method="POST">
                 <label>Email</label>
-                <input type="password" class="input-field" required>
+                <input type="email" class="input-field" name="loginEmail" id="loginEmail" autocomplete="email" required>
                 <label>Password</label>
-                <input type="text" class="input-field" required>
+                <input type="password" class="input-field" name="loginPassword" id="loginPassword" autocomplete="current-password" required>
                 <button type="submit" class="submit-btn">LOGIN</button>
             </form>
-            <form id="signup" class="input-group">
+            <form id="signupForm" class="input-group">
                 <label>Name</label>
                 <input type="text" class="input-field" required>
                 <label>Email</label>
@@ -121,8 +129,8 @@
         </div>
     </div>
 
+    <script src="./JS/login-animations.js"></script>
     <script src="./JS/login-script.js"></script>
-
 
 </body>
 </html>
