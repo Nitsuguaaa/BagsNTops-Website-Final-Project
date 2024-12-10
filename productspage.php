@@ -89,6 +89,38 @@
         </div>
     </div>
 
+    <div id="show-cart" class="temp-modal-bg">
+        <div class="cart-box">
+            <div class="top-head">
+                <header>
+                    Your Cart <br>
+                    Customer Details
+                </header>
+                Name:
+                <br>Address:
+                <br>Contact:
+            </div>
+
+            <table border="1" id="details-table">
+                <thead>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Delete Item</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sample Product Name</td>
+                        <td>Sample Quantity</td>
+                        <td>Sample Price</td>
+                        <td>delete</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+
     <script src="./JS/login-script.js"></script>
 
 
