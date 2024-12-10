@@ -416,3 +416,53 @@ label {
 #signupForm {
     left: 1050px;
 }
+
+.temp-modal-bg {
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    /*display: none;*/
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+}
+
+.cart-box {
+    width: 900px;
+    height: 700px;
+    position: relative;
+    margin: 6% auto;
+    background: #fffff0;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    border: 3px solid #E27C97;
+    
+}
+
+.top-head header {
+    font-size: 40px;
+}
+
+.top-head {
+    font-size: 20px;
+}
+
+#details-table {
+    border-collapse: collapse;
+    margin: 20px 0 0 30px;
+    font-size: 20px;
+    width: 830px;
+    max-height: 500px;
+}
+
+#details-table th,
+#details-table td {
+    padding: 12px 15px;
+}
+
+#details-table td {
+    text-align: right;
+}

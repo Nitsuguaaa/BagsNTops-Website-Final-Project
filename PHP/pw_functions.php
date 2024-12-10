@@ -1,5 +1,5 @@
 <?php
-include_once('./db_functions.php');
+require('./db_functions.php');
 
 class passwordGeneration {
     function encodePassword($plain_password) {

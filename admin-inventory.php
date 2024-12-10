@@ -28,7 +28,7 @@ session_start();
             <hr>
             <div id="main-content"></div>
             <div id="btn">
-                <button type="button" id="add-btn">+ Product</button>
+                <button type="button" id="show-button" class="add-btn">+ Product</button>
             </div>
                 <table id="content-table" border="1">
                     <thead>
@@ -53,8 +53,8 @@ session_start();
                                 echo "<td>".$result_array[$x]["productName"]."</td>";
                                 echo "<td>".$result_array[$x]["productStock"]."</td>";
                                 echo "<td>".$result_array[$x]["productPrice"]."</td>";
-                                echo "<td><button id='action-btns'><img src='/RSC/admin-page-icons/edit-btn.png'></button>";
-                                echo "<button id='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
+                                echo "<td><button id='show-button' class='action-btns'><img src='/RSC/admin-page-icons/edit-btn.png'></button>";
+                                echo "<button class='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -64,6 +64,28 @@ session_start();
         </div>
     </div>
 
-    <div id="popup-form" class="modal-bg"></div>
+    <div id="popup-form" class="modal-bg">
+        <div class="product-details-box animate">
+            <form class="prod-input-group">
+                <label>Product Name:</label>
+                <input type="text" class="cs-input-field">
+                <br>
+                <label>Price:</label>
+                <input type="text" class="cs-input-field">
+                <br>
+                <label>Description:</label>
+                <input type="text" class="cs-input-field">
+                <br>
+                <label>Quantity:</label>
+                <input type="text" class="cs-input-field">
+                <br>
+                <label>Image:</label>
+                <input type="file" class="form-image" accept="image/*">
+                <button type="submit" class="submit-btn">Done</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./JS/admin-script.js"></script>
 </body>
 </html>
