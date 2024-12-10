@@ -90,7 +90,7 @@ body {
     padding-right: 50px;
 }
 
-#add-btn {
+.add-btn {
     font-size: 25px;
     color: #fff;
     background-color: #E27C97;
@@ -258,4 +258,26 @@ body {
     border: none;
     font-size: 30px;
     margin-top: 40px;
+}
+
+.product-details-box {
+    width: 900px;
+    height: 400px;
+    position: relative;
+    margin: 10% auto;
+    background: #fffff0;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid #E27C97;
+    font-family: "Recoleta";
+    padding: 20px 20px 20px 35px;
+}
+
+.form-image {
+    background-color: #E27C97;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
 }
