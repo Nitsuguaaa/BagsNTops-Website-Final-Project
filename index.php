@@ -21,7 +21,7 @@ db_init();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome | Bags N' Tops</title>
-    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/index.css">
 </head>
 <body>
     <div id="logout-screen">
