@@ -1,8 +1,8 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+document.getElementById("signupForm").addEventListener("submit", function(event) {
     event.preventDefault();
     const dataForm = new FormData(this);
 
-    fetch('/PHP/login_functions.php', {
+    fetch('/PHP/signup_functions.php', {
         method: 'POST',
         body: dataForm
     })
@@ -21,18 +21,13 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     .then(data => {
         console.log("Response data:", data);
         if (data.success) {
-            if(data.message === "admin.login") {
-                window.open("/admin-receipt.php");
-            } else {
-                console.log("Login success! message: " + data.message);
-                alert("Successfuly Logged In!");
-                document.getElementById('login-form').style.display = "none";    
-            }
-
-        } else {
-            console.log("Login failed:", data.message);
-            alert("Incorrect email/password");
+            console.log("account created");
+            alert("Account created!");
             document.getElementById('login-form').style.display = "none";
+        } else {
+            console.log("Account creation failed:", data.message);
+            alert(data.message);
+            //document.getElementById('login-form').style.display = "none";
         }
     })
     .catch(error => {

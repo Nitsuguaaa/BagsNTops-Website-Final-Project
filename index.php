@@ -5,15 +5,14 @@ if(!isset($_SESSION['loggedIn'])) {
 }
 
 echo "<script>console.log('current session in index: ". $_SESSION['loggedIn'] ."');</script>";
+
 include_once('./PHP/db_functions.php');
-//$initDB = new DBInitiator();
-//$initDB->checkDB(); //check if bagsntopsdb exists. If not then import bagsntops.sql
-/*
+include_once('./PHP/id_functions.php');
+include_once('./PHP/pw_functions.php');
 
-REMINDER TO ADD DB INIT WHEN PROJECT IS 90% FINISHED
-db_init();
+$initDB = new DBInitiator();
+$initDB->checkDB(); //check if bagsntopsdb exists. If not then import bagsntops.sql
 
-*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,13 +139,13 @@ db_init();
             </form>
             <form id="signupForm" class="input-group">
                 <label>Name</label>
-                <input type="text" class="input-field" required>
+                <input type="text" class="input-field" id="signupName" name="signupName" required>
                 <label>Email</label>
-                <input type="text" class="input-field" required>
+                <input type="email" class="input-field" id="signupEmail" name="signupEmail" autocomplete="email" required>
                 <label>Password</label>
-                <input type="text" class="input-field" required>
+                <input type="password" class="input-field" id="signupPassword" name="signupPassword" autocomplete="new-password" required>
                 <label>Confirm Password</label>
-                <input type="text" class="input-field" required>
+                <input type="password" class="input-field" id="signupConfirmPassword" name="signupConfirmPassword" autocomplete="new-password" required>
                 <button type="submit" class="submit-btn">Create</button>
             </form>
         </div>
@@ -154,6 +153,7 @@ db_init();
 
     <script src="./JS/login-animations.js"></script>
     <script src="./JS/login-script.js"></script>
+    <script src="./JS/signup-script.js"></script>
 
 </body>
 </html>

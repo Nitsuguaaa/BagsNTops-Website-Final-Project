@@ -1,6 +1,9 @@
 <?php 
-//include_once './PHP/db-init.php';
 session_start();
+
+include_once('./PHP/db_functions.php');
+include_once('./PHP/id_functions.php');
+include_once('./PHP/pw_functions.php');
 ?>
 
 
@@ -91,13 +94,13 @@ session_start();
             </form>
             <form id="signupForm" class="input-group">
                 <label>Name</label>
-                <input type="text" class="input-field" required>
+                <input type="text" class="input-field"  id="signupName" name="signupName"  required>
                 <label>Email</label>
-                <input type="text" class="input-field" required>
+                <input type="email" class="input-field" id="signupEmail" name="signupEmail" autocomplete="email"  required>
                 <label>Password</label>
-                <input type="text" class="input-field" required>
+                <input type="password" class="input-field" id="signupPassword" name="signupPassword" autocomplete="new-password" required>
                 <label>Confirm Password</label>
-                <input type="text" class="input-field" required>
+                <input type="password" class="input-field" id="signupConfirmPassword" name="signupConfirmPassword" autocomplete="new-password" required>
                 <button type="submit" class="submit-btn">Create</button>
             </form>
         </div>
@@ -137,6 +140,7 @@ session_start();
 
     <script src="./JS/login-animations.js"></script>
     <script src="./JS/login-script.js"></script>
+    <script src="./JS/signup-script.js"></script>
 
 </body>
 </html>

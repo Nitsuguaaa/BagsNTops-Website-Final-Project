@@ -31,8 +31,7 @@ class DBInitiator
             die("Connection failed: " . $this->conn->connect_error);
         }
 
-        $database = $this->conn->select_db('bagsntopsdb');
-        if ($database == NULL) {
+        if (!$this->conn->select_db('bagsntopsdb')) {
             $sql = "CREATE DATABASE bagsntopsdb";
             if ($this->conn->query($sql) === FALSE) {
                 return "Error creating database: " . $this->conn->error;
@@ -45,7 +44,7 @@ class DBInitiator
     }
 }
 
-class insert
+/*class insert
 {
     public $db;
     public $command;
@@ -86,29 +85,61 @@ class insert
         }
         $this->db->endDB();
     }
+}*/
+
+class insert
+{
+    private $db;
+    private $table;
+
+    function __construct($table)
+    {
+        $this->db = new DBStarter();
+        $this->table = $table; // Store table name
+    }
+
+    function insertData(array $elements, array $values)
+    {
+        $this->db->startDB();
+
+        $columns = implode(', ', $elements);
+        $placeholders = implode(', ', array_map(function ($value) {
+            return is_int($value) || is_float($value) ? $value : '"'.$value.'"';
+        }, $values));
+
+        $command = "INSERT INTO {$this->table} ({$columns}) VALUES ({$placeholders});";
+
+        if ($this->db->conn->query($command) === FALSE) {
+            echo '<script>console.log("insert failed: ' . $this->db->conn->error . '");</script>';
+        }
+
+        $this->db->endDB();
+
+        return $command;
+    }
 }
 
 class delete
 {
-    public $db;
-    public $command;
+    private $db;
+    private $table;
+
     function __construct($table)
     {
         $this->db = new DBStarter();
-        $this->command = "DELETE FROM {$table} WHERE ";
+        $this->table = $table; // Store table name
     }
 
     function deleteData($element, $value)
     {
         $this->db->startDB();
-        if (is_int($value)) {
-            $this->command .= "{$element} = {$value};";
-        } else {
-            $this->command .= "{$element} = '{$value}';";
-        }
 
-        if ($this->db->conn->query($this->command) === FALSE) {
-            echo '<script>console.log("delete failed");</script>';
+        $command = "DELETE FROM {$this->table} WHERE {$element} = ";
+        $command .= is_int($value) || is_float($value) ? $value : '"'.$value.'"';
+        $command .= ";";
+
+        if ($this->db->conn->query($command) === FALSE) {
+            echo '<script>console.log("delete failed: ' . $this->db->conn->error . '");</script>';
         }
 
         $this->db->endDB();
@@ -118,33 +149,35 @@ class delete
 
 class update
 {
-    public $db;
-    public $command;
+    private $db;
+    private  $table;
     function __construct($table)
     {
         $this->db = new DBStarter();
-        $this->command = "UPDATE {$table} SET ";
+        $this->table = $table;
     }
 
     function updateData($element, $value, $whereElement, $whereValue)
     {
         $this->db->startDB();
 
-        $this->command .= "{$element} = ";
-        if (is_int($value)) {
-            $this->command .= "{$value}";
+        // Construct a fresh query each time
+        $command = "UPDATE {$this->table} SET {$element} = ";
+        if (is_int($value) || is_float($value)) {
+            $command .= "{$value}";
         } else {
-            $this->command .= "'{$value}'";
+            $command .= "'{$value}'";
         }
-        $this->command .= " WHERE {$whereElement} = ";
-        if (is_int($whereValue)) {
-            $this->command .= "{$whereValue};";
+        $command .= " WHERE {$whereElement} = ";
+        if (is_int($whereValue) || is_float($whereValue)) {
+            $command .= "{$whereValue};";
         } else {
-            $this->command .= "'{$whereValue}';";
+            $command .= "'{$whereValue}';";
         }
 
-        if ($this->db->conn->query($this->command) === FALSE) {
-            echo '<script>console.log("update failed");</script>';
+        // Execute the query
+        if ($this->db->conn->query($command) === FALSE) {
+            echo '<script>console.log("Update failed: ' . $this->db->conn->error . '");</script>';
         }
 
         $this->db->endDB();
@@ -155,12 +188,11 @@ class update
 class select
 {
     public $db;
-    public $command;
     public $table;
+
     function __construct($table)
     {
         $this->db = new DBStarter();
-        $this->command = "SELECT ";
         $this->table = $table;
     }
 
@@ -168,25 +200,33 @@ class select
     {
         $this->db->startDB();
 
+        // Reset command for each query to prevent append errors
+        $command = "SELECT {$column} FROM {$this->table}";
+
+        // Add constraints if provided
         if (!is_null($constraints)) {
-            $this->command .= "{$column} FROM {$this->table} {$constraints};";
-        } else {
-            $this->command .= "{$column} FROM {$this->table};";
+            $command .= " {$constraints}";
         }
 
-        //echo $this->command;
+        $command .= ";";  // Add the semicolon to the query
 
-        $result = $this->db->conn->query($this->command);
-    
+        // Debugging the query (can be removed in production)
+        // echo $command;
+
+        $result = $this->db->conn->query($command);
+
+        // Prepare the result array
         $result_array = [];
-        if ($result->num_rows > 0) {
+        if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $result_array[] = $row; 
+                $result_array[] = $row;
             }
         }
 
+        // End the database connection
         $this->db->endDB();
 
+        // Return the result
         return $result_array;
     }
 }

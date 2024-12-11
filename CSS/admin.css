@@ -234,15 +234,19 @@ body {
 }
 
 .cs-input-field {
-    width: 700px;
+
     padding: 10px 0;
     padding-left: 10px;
     margin-top: 5px;
     margin-left: 5px;
+    margin-bottom: 3px;
+    margin-right: 20px;
     border: 1px solid gray;
     outline: none;
     background: transparent;
     border-radius: 10px;
+    width: 70%;
+    float: right;
 }
 
 .submit-btn {
@@ -261,7 +265,7 @@ body {
 }
 
 .product-details-box {
-    width: 900px;
+    width: 700px;
     height: 400px;
     position: relative;
     margin: 10% auto;
@@ -274,10 +278,36 @@ body {
     padding: 20px 20px 20px 35px;
 }
 
+#product-description {
+    resize: none;
+}
+
+#product-price::-webkit-outer-spin-button,
+#product-price::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#label-holder {
+    width: 25%;
+    float: left;
+    padding-top: 20px;
+    text-align: right;
+}
+
+#product-id-holder {
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
 .form-image {
     background-color: #E27C97;
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
     margin-top: 5px;
+    margin-left: 20px;
 }

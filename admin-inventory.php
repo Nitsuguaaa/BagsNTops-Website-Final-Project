@@ -28,7 +28,7 @@ session_start();
             <hr>
             <div id="main-content"></div>
             <div id="btn">
-                <button type="button" id="show-button" class="add-btn">+ Product</button>
+                <button type="button" id="open-modal-form" class="add-btn" action-type="new-product">+ Product</button>
             </div>
                 <table id="content-table" border="1">
                     <thead>
@@ -47,13 +47,13 @@ session_start();
                             $accSel = new select('productstb');
                             $result_array = $accSel->selectData($column='productId, productName, productPrice, productStock');
 
-                            for($x = 0; $x < count($result_array); $x++) {
+                            foreach($result_array as $product) {
                                 echo "<tr>";
-                                echo "<td>".$result_array[$x]["productId"]."</td>";
-                                echo "<td>".$result_array[$x]["productName"]."</td>";
-                                echo "<td>".$result_array[$x]["productStock"]."</td>";
-                                echo "<td>".$result_array[$x]["productPrice"]."</td>";
-                                echo "<td><button id='show-button' class='action-btns'><img src='/RSC/admin-page-icons/edit-btn.png'></button>";
+                                echo "<td>".$product["productId"]."</td>";
+                                echo "<td>".$product["productName"]."</td>";
+                                echo "<td>".$product["productStock"]."</td>";
+                                echo "<td>".$product["productPrice"]."</td>";
+                                echo "<td><button id='open-modal-form' class='action-btns' action-type='edit-product' product-id='{$product['productId']}' product-name='{$product['productName']}' product-price='{$product['productPrice']}' product-stock='{$product['productStock']}'><img src='/RSC/admin-page-icons/edit-btn.png'></button>";
                                 echo "<button class='action-btns'><img src='/RSC/admin-page-icons/delete-btn.png'></button></td>";
                                 echo "</tr>";
                             }
@@ -66,21 +66,25 @@ session_start();
 
     <div id="popup-form" class="modal-bg">
         <div class="product-details-box animate">
-            <form class="prod-input-group">
-                <label>Product Name:</label>
-                <input type="text" class="cs-input-field">
+            <form class="prod-input-group" id="prod-input-group" enctype="multipart/form-data">
+                <input type="hidden" id="action-type" name="action-type" value="">
+                <input type="hidden" id="product-id-store" name="product-id-store" value="">
+
+                <label id="product-id-holder">test</label>
+                <label id="label-holder">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" class="cs-input-field" >
                 <br>
-                <label>Price:</label>
-                <input type="text" class="cs-input-field">
+                <label id="label-holder">Price:</label>
+                <input type="number" id="product-price" name="product-price" class="cs-input-field" >
                 <br>
-                <label>Description:</label>
-                <input type="text" class="cs-input-field">
+                <label id="label-holder">Description:</label>
+                <textarea form="prod-input-group" id="product-description" name="product-description" class="cs-input-field"></textarea>
                 <br>
-                <label>Quantity:</label>
-                <input type="text" class="cs-input-field">
+                <label id="label-holder" style="margin-top: 13px;">Quantity:</label>
+                <input type="number" id="product-stock" name="product-stock" class="cs-input-field" >
                 <br>
-                <label>Image:</label>
-                <input type="file" class="form-image" accept="image/*">
+                <label id="label-holder">Image:</label>
+                <input type="file" class="form-image" name="product-image" accept="image/*">
                 <button type="submit" class="submit-btn">Done</button>
             </form>
         </div>

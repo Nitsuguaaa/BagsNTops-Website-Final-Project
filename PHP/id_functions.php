@@ -1,5 +1,5 @@
 <?php
-require('./db_functions.php');
+//require('./db_functions.php');
 
 class IDGenerator {
     function duplicateChecker($uniqueID, $table, $IDType) {

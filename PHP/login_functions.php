@@ -1,44 +1,51 @@
 <?php
 session_start();
 
-//include_once('db_functions.php');
+include_once('db_functions.php');
 include_once('pw_functions.php');
 
-// Ensure the user input is validated before querying the database
+//check if fields are complete
 if (!isset($_POST['loginEmail'], $_POST['loginPassword'])) {
-    echo json_encode(['success' => false, 'message' => 'Invalid input']);
-    exit;
+    finalCommand(false, "Missing Fields");
 }
 
 $userEmail = filter_var($_POST['loginEmail'], FILTER_SANITIZE_EMAIL);
 $userPassword = $_POST['loginPassword'];
 
-// Query the database for the password associated with the email
 $selectData = new select('accountstb');
+$passwordChecker = new passwordGeneration();
+//finalCommand(false, "hey I caught you ;)");
+//array
 $result = $selectData->selectData('accountPassword, accountId', "WHERE accountEmail = '{$userEmail}'");
 
-$passwordChecker = new passwordGeneration();
-$userId = $result[0]['accountId'];
+//bool
 $correctPassword = $passwordChecker->decodePassword($userPassword, $result[0]['accountId']);
 
+//check if user exists
 if (!$result || count($result) === 0) {
-    echo json_encode(['success' => false, 'message' => 'User not found']);
-    exit;
+    finalCommand(false, "User not found");
 }
 
-$db_password = $result[0]['accountPassword'];
-
-// Clean up the output buffer and set the content type to JSON
-ob_clean();
-header('Content-Type: application/json');
-
-// Dummy check for demonstration
+//check if password is correct
 if ($correctPassword) {
-    $_SESSION["loggedIn"] = "yes";
-    $_SESSION["currentAccount"] = $userId;
-    echo json_encode(['success' => true, 'message' => 'Login successful']);
+    if($result[0]['accountId'] == "AD-0000") {
+        finalCommand(true, "admin.login");
+    } else {
+        $_SESSION["loggedIn"] = "yes";
+        $_SESSION["currentAccount"] = $result[0]['accountId'];
+        finalCommand(true, "Login Successful");
+    }
+
 } else {
-    echo json_encode(['success' => false, 'message' => 'Invalid password']);
+    finalCommand(false, "invalid password");
+}
+
+function finalCommand(bool $successData,string $messageData) {
+    ob_clean();
+    header('Content-Type: application/json');
+
+    echo json_encode(['success' => $successData, 'message' => $messageData]);
+    exit;
 }
 
 exit;
